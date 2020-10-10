@@ -9,7 +9,7 @@ class Config {
     std::string filename;
   public:
     Config(std::string _filename);
-    void load_data(std::string filename);
+    void load_data();
 };
 
 #endif
