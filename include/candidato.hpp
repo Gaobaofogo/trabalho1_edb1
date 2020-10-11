@@ -3,22 +3,10 @@
 
 #include <string>
 
-enum Notas {
-  Branco,
-  A,
-  B,
-  C,
-  D,
-  E
-};
 
-class Candidato {
-  private:
-    std::string nome;
-    Notas* notas;
-
-  public:
-    ~Candidato();
+struct Candidato {
+  std::string nome;
+  char notas[10];
 };
 
 #endif

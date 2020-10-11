@@ -1,6 +1,8 @@
 #ifndef CONFIG_PROJECT_H
 #define CONFIG_PROJECT_H
 
+#include "candidato.hpp"
+
 #include <string>
 
 
@@ -9,7 +11,7 @@ class Config {
     std::string filename;
   public:
     Config(std::string _filename);
-    void load_data();
+    Candidato* load_data();
 };
 
 #endif

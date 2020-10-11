@@ -7,6 +7,7 @@ INCLUDE_DIRECTORIES(include/)
 
 ADD_EXECUTABLE(
   prog
-  src/main.cpp
+  src/app.cpp
   src/config.cpp
+  src/main.cpp
 )

@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/alexandre/Faculdade/edb_1/trabalho1/build",
+  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb_1/trabalho1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/app.cpp.o -c /home/alexandre/Faculdade/edb_1/trabalho1/src/app.cpp",
+  "file": "/home/alexandre/Faculdade/edb_1/trabalho1/src/app.cpp"
+},
+{
+  "directory": "/home/alexandre/Faculdade/edb_1/trabalho1/build",
+  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb_1/trabalho1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/config.cpp.o -c /home/alexandre/Faculdade/edb_1/trabalho1/src/config.cpp",
+  "file": "/home/alexandre/Faculdade/edb_1/trabalho1/src/config.cpp"
+},
+{
+  "directory": "/home/alexandre/Faculdade/edb_1/trabalho1/build",
+  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb_1/trabalho1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/main.cpp.o -c /home/alexandre/Faculdade/edb_1/trabalho1/src/main.cpp",
+  "file": "/home/alexandre/Faculdade/edb_1/trabalho1/src/main.cpp"
+}
+]
