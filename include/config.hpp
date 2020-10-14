@@ -9,9 +9,11 @@
 class Config {
   private:
     std::string filename;
+    size_t quantidade_candidatos;
   public:
     Config(std::string _filename);
     Candidato* load_data();
+    size_t get_quantidade_candidatos();
 };
 
 #endif

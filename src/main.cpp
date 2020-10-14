@@ -15,7 +15,8 @@ int main(int argc, char* argv[]) {
 
   Config config(argv[1]);
   App app(
-      config.load_data()
+      config.load_data(),
+      config.get_quantidade_candidatos()
   );
 
   return app.run(argv[2], std::stoi(argv[3]));

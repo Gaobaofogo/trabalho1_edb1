@@ -1,5 +1,5 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.1)
-PROJECT(projeto_edb)
+PROJECT(trabalho_1_edb1)
 
 SET(CMAKE_CXX_STANDARD 11)
 
@@ -9,5 +9,6 @@ ADD_EXECUTABLE(
   prog
   src/app.cpp
   src/config.cpp
+  src/quick_sorts.cpp
   src/main.cpp
 )

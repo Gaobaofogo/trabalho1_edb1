@@ -7,9 +7,10 @@
 class App {
   private:
     Candidato* candidatos;
+    size_t quantidade_candidatos;
 
   public:
-    App(Candidato* _candidatos);
+    App(Candidato* _candidatos, size_t quantidade_candidatos);
     ~App();
     int run(std::string command, size_t quantity);
 };
