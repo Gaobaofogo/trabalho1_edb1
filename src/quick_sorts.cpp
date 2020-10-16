@@ -1,5 +1,15 @@
 #include "quick_sorts.hpp"
 
+/*
+ * Tirei daí como usar funções anônimas e em chamadas de função
+ * https://ncona.com/2019/05/passing-functions-as-arguments-in-cpp/
+ *
+ * O algoritmo de Quick sort foi retirado do livro:
+ * Algoritmos - Teoria e prática
+ * Autor: Thomas  H. Cormen
+ * Capítulo 7 | Quicksort
+ */
+
 
 void quick_sort_best(Candidato* candidatos, int p, int r) {
   if (p < r) {
