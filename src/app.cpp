@@ -4,9 +4,9 @@
 #include <iostream>
 
 
-App::App(Candidato* _candidatos, size_t quantidade_candidatos) {
+App::App(Candidato* _candidatos) {
   this->candidatos = _candidatos;
-  this->quantidade_candidatos = quantidade_candidatos;
+  this->quantidade_candidatos = 0;
 }
 
 App::~App() {
@@ -14,16 +14,38 @@ App::~App() {
 }
 
 int App::run(std::string command, size_t quantity) {
-
   if (command == "best") {
     quick_sort_best(
-        candidatos,
+        this->candidatos,
         0,
-        this->quantidade_candidatos
+        this->get_quantidade_candidatos() - 1
         );
+
+    for (size_t i = 0; i < quantity; ++i) {
+      std::cout << this->candidatos[i].nome << " - "<< this->candidatos[i].acertos << std::endl;
+    }
+  } else if (command == "worst") {
+    quick_sort_worst(
+        this->candidatos,
+        0,
+        this->get_quantidade_candidatos() - 1
+        );
+
+    for (size_t i = 0; i < quantity; ++i) {
+      std::cout << this->candidatos[i].nome << " - "<< this->candidatos[i].acertos << std::endl;
+    }
   } else {
     std::cerr << "Comando '" << command << "' não reconhecido." << std::endl;
     return 1;
   }
+
   return 0;
+}
+
+int App::get_quantidade_candidatos() {
+  return this->quantidade_candidatos;
+}
+
+void App::set_quantidade_candidatos(int _quantidade_candidatos) {
+  this->quantidade_candidatos = _quantidade_candidatos;
 }

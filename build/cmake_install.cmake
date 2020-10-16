@@ -1,4 +1,4 @@
-# Install script for directory: /home/alexandre/Faculdade/edb1/trabalho1_edb1
+# Install script for directory: /home/gabriel/Faculdade/edb1/trabalho1_edb1
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/alexandre/Faculdade/edb1/trabalho1_edb1/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

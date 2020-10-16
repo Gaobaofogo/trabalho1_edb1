@@ -8,6 +8,7 @@ INCLUDE_DIRECTORIES(include/)
 ADD_EXECUTABLE(
   prog
   src/app.cpp
+  src/candidato.cpp
   src/config.cpp
   src/quick_sorts.cpp
   src/main.cpp

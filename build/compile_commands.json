@@ -1,17 +1,27 @@
 [
 {
-  "directory": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/build",
-  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/app.cpp.o -c /home/alexandre/Faculdade/edb1/trabalho1_edb1/src/app.cpp",
-  "file": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/src/app.cpp"
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/app.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/app.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/app.cpp"
 },
 {
-  "directory": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/build",
-  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/config.cpp.o -c /home/alexandre/Faculdade/edb1/trabalho1_edb1/src/config.cpp",
-  "file": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/src/config.cpp"
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/candidato.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/candidato.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/candidato.cpp"
 },
 {
-  "directory": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/build",
-  "command": "/usr/bin/c++   -I/home/alexandre/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/main.cpp.o -c /home/alexandre/Faculdade/edb1/trabalho1_edb1/src/main.cpp",
-  "file": "/home/alexandre/Faculdade/edb1/trabalho1_edb1/src/main.cpp"
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/config.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/config.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/config.cpp"
+},
+{
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/quick_sorts.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/quick_sorts.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/quick_sorts.cpp"
+},
+{
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/main.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/main.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/main.cpp"
 }
 ]

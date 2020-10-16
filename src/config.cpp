@@ -9,15 +9,19 @@
 #include <string>
 
 
-Config::Config(std::string _filename): filename(_filename), quantidade_candidatos(0) {
+Config::Config(std::string _filename) {
+  this->filename = _filename;
+  this->quantidade_candidatos = 0;
 }
 
 Candidato* Config::load_data() {
+  this->quantidade_candidatos = 0;
   std::ifstream resp_file(filename);
 
   if (resp_file.fail()) {
     throw FileException();
   }
+
   Gabarito gabarito;
   gabarito.resultado[0] = 'A';
   gabarito.resultado[1] = 'B';
@@ -32,7 +36,7 @@ Candidato* Config::load_data() {
 
   std::string line;
   Candidato* candidatos = new Candidato[1];
-  size_t limite = 1;
+  int limite = 1;
 
   while(std::getline(resp_file, line)) {
     Candidato novo_candidato(line, gabarito);
@@ -40,7 +44,7 @@ Candidato* Config::load_data() {
     if (this->quantidade_candidatos == limite) {
      Candidato* novo_array = new Candidato[limite * 2] ;
 
-     for (size_t j = 0; j < limite; ++j) {
+     for (int j = 0; j < limite; ++j) {
        novo_array[j] = candidatos[j];
      }
 
@@ -59,6 +63,6 @@ Candidato* Config::load_data() {
   return candidatos;
 }
 
-size_t Config::get_quantidade_candidatos() {
+int Config::get_quantidade_candidatos() {
   return this->quantidade_candidatos;
 }

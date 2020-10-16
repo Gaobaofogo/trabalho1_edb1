@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/alexandre/Faculdade/edb1/trabalho1_edb1
+CMAKE_SOURCE_DIR = /home/gabriel/Faculdade/edb1/trabalho1_edb1
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/alexandre/Faculdade/edb1/trabalho1_edb1/build
+CMAKE_BINARY_DIR = /home/gabriel/Faculdade/edb1/trabalho1_edb1/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexandre/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles /home/alexandre/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gabriel/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles /home/gabriel/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/alexandre/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/gabriel/Faculdade/edb1/trabalho1_edb1/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ src/app.cpp.s:
 	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/app.cpp.s
 .PHONY : src/app.cpp.s
 
+src/candidato.o: src/candidato.cpp.o
+
+.PHONY : src/candidato.o
+
+# target to build an object file
+src/candidato.cpp.o:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/candidato.cpp.o
+.PHONY : src/candidato.cpp.o
+
+src/candidato.i: src/candidato.cpp.i
+
+.PHONY : src/candidato.i
+
+# target to preprocess a source file
+src/candidato.cpp.i:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/candidato.cpp.i
+.PHONY : src/candidato.cpp.i
+
+src/candidato.s: src/candidato.cpp.s
+
+.PHONY : src/candidato.s
+
+# target to generate assembly for a file
+src/candidato.cpp.s:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/candidato.cpp.s
+.PHONY : src/candidato.cpp.s
+
 src/config.o: src/config.cpp.o
 
 .PHONY : src/config.o
@@ -204,6 +231,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/quick_sorts.o: src/quick_sorts.cpp.o
+
+.PHONY : src/quick_sorts.o
+
+# target to build an object file
+src/quick_sorts.cpp.o:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/quick_sorts.cpp.o
+.PHONY : src/quick_sorts.cpp.o
+
+src/quick_sorts.i: src/quick_sorts.cpp.i
+
+.PHONY : src/quick_sorts.i
+
+# target to preprocess a source file
+src/quick_sorts.cpp.i:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/quick_sorts.cpp.i
+.PHONY : src/quick_sorts.cpp.i
+
+src/quick_sorts.s: src/quick_sorts.cpp.s
+
+.PHONY : src/quick_sorts.s
+
+# target to generate assembly for a file
+src/quick_sorts.cpp.s:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/quick_sorts.cpp.s
+.PHONY : src/quick_sorts.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +270,18 @@ help:
 	@echo "... src/app.o"
 	@echo "... src/app.i"
 	@echo "... src/app.s"
+	@echo "... src/candidato.o"
+	@echo "... src/candidato.i"
+	@echo "... src/candidato.s"
 	@echo "... src/config.o"
 	@echo "... src/config.i"
 	@echo "... src/config.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/quick_sorts.o"
+	@echo "... src/quick_sorts.i"
+	@echo "... src/quick_sorts.s"
 .PHONY : help
 
 

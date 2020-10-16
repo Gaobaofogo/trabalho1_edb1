@@ -7,12 +7,14 @@
 class App {
   private:
     Candidato* candidatos;
-    size_t quantidade_candidatos;
+    int quantidade_candidatos;
 
   public:
-    App(Candidato* _candidatos, size_t quantidade_candidatos);
+    App(Candidato* _candidatos);
     ~App();
     int run(std::string command, size_t quantity);
+    int get_quantidade_candidatos();
+    void set_quantidade_candidatos(int _quantidade_candidatos);
 };
 
 #endif

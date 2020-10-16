@@ -9,7 +9,8 @@ Candidato::Candidato() {
 }
 
 
-Candidato::Candidato(std::string string_candidato, Gabarito gabarito): acertos(0) {
+Candidato::Candidato(std::string string_candidato, Gabarito gabarito) {
+  this->acertos = 0;
   std::stringstream sstream(string_candidato);
 
   // Insere nome
