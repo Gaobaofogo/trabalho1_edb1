@@ -14,6 +14,7 @@ class Config {
     Config(std::string _filename);
     Candidato* load_data();
     int get_quantidade_candidatos();
+    Candidato* alloc_candidatos(Candidato* candidatos, int limite);
 };
 
 #endif

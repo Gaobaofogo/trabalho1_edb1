@@ -42,16 +42,8 @@ Candidato* Config::load_data() {
     Candidato novo_candidato(line, gabarito);
 
     if (this->quantidade_candidatos == limite) {
-     Candidato* novo_array = new Candidato[limite * 2] ;
-
-     for (int j = 0; j < limite; ++j) {
-       novo_array[j] = candidatos[j];
-     }
-
-     delete[] candidatos;
-
-     candidatos = novo_array;
-     limite *= 2;
+      candidatos = this->alloc_candidatos(candidatos, limite);
+      limite *= 2;
     }
 
     candidatos[this->quantidade_candidatos] = novo_candidato;
@@ -62,6 +54,21 @@ Candidato* Config::load_data() {
 
   return candidatos;
 }
+
+
+Candidato* Config::alloc_candidatos(Candidato *candidatos, int limite) {
+  Candidato* novo_array = new Candidato[limite * 2] ;
+
+  for (int j = 0; j < limite; ++j) {
+    novo_array[j] = candidatos[j];
+  }
+
+  delete[] candidatos;
+  candidatos = nullptr;
+
+  return novo_array;
+}
+
 
 int Config::get_quantidade_candidatos() {
   return this->quantidade_candidatos;
