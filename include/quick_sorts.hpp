@@ -18,13 +18,31 @@ typedef bool comparation_func(int, int);
 
 void quick_sort_best(Candidato* candidatos, int p, int r);
 void quick_sort_worst(Candidato* candidatos, int p, int r);
-int partition_acertos(Candidato* candidatos, int p, int r, comparation_func isTrue);
 
 void quick_sort_best_questions(Questao *questoes, int p, int r);
 void quick_sort_worst_questions(Questao *questoes, int p, int r);
-int partition_questoes(Questao* questoes, int p, int r, comparation_func isTrue);
-
 void quick_sort_blank_questions(Questao *questoes, int p, int r);
-int partition_blank_questoes(Questao* questoes, int p, int r, comparation_func isTrue);
+
+template<class T>
+int partition(T* arr, int p, int r, bool isTrue(T, T)) {
+  T x = arr[r];
+  int i = p - 1;
+
+  for (int j = p; j < r; ++j) {
+    if (isTrue(arr[j], x)) {
+      ++i;
+
+      T tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+  }
+
+  T tmp = arr[i + 1];
+  arr[i + 1] = arr[r];
+  arr[r] = tmp;
+
+  return i + 1;
+}
 
 #endif
