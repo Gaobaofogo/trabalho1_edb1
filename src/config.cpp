@@ -13,9 +13,7 @@
 Config::Config(std::string _filename) {
   this->filename = _filename;
   this->quantidade_candidatos = 0;
-}
 
-Candidato* Config::load_data() {
   std::ifstream resp_file(filename);
 
   if (resp_file.fail()) {
@@ -37,43 +35,54 @@ Candidato* Config::load_data() {
   gabarito.resultado[9] = 'A';
 
   std::string line;
-  Candidato* candidatos = new Candidato[1];
+  this->candidatos = new Candidato[1];
   int limite = 1;
 
   while(std::getline(resp_file, line)) {
-    std::stringstream sstream(line);
-    std::string lixo;
-    char resposta;
-
-    // Remove nome
-    sstream >> lixo;
-
-    // Olha as notas
-    for (int i = 0; i < 10; ++i) {
-      sstream >> resposta;
-      
-      if (resposta == gabarito.resultado[i]) {
-        this->questoes[i].acertos += 1;
-      } else if (resposta != 'A' && resposta != 'B' && resposta != 'C'
-                 && resposta != 'D' && resposta != 'E') {
-        this->questoes[i].erros_vazios += 1;
-      }
-    }
+    this->apura_questoes(line, gabarito);
 
     Candidato novo_candidato(line, gabarito);
-
-    if (this->quantidade_candidatos == limite) {
-      candidatos = this->alloc_candidatos(candidatos, limite);
-      limite *= 2;
-    }
-
-    candidatos[this->quantidade_candidatos] = novo_candidato;
-    this->quantidade_candidatos += 1;
+    limite = this->add_candidato(novo_candidato, limite);
   }
 
   resp_file.close();
+}
 
-  return candidatos;
+void Config::apura_questoes(std::string line, Gabarito gabarito) {
+  std::stringstream sstream(line);
+  std::string lixo;
+  char resposta;
+
+  // Remove nome
+  sstream >> lixo;
+
+  // Olha as notas
+  for (int i = 0; i < 10; ++i) {
+    sstream >> resposta;
+    
+    if (resposta == gabarito.resultado[i]) {
+      this->questoes[i].acertos += 1;
+    } else if (resposta != 'A' && resposta != 'B' && resposta != 'C'
+               && resposta != 'D' && resposta != 'E') {
+      this->questoes[i].erros_vazios += 1;
+    }
+  }
+}
+
+int Config::add_candidato(Candidato novo_candidato, int limite) {
+  if (this->quantidade_candidatos == limite) {
+    candidatos = this->alloc_candidatos(candidatos, limite);
+    limite *= 2;
+  }
+
+  candidatos[this->quantidade_candidatos] = novo_candidato;
+  this->quantidade_candidatos += 1;
+
+  return limite;
+}
+
+Candidato* Config::load_data() {
+  return this->candidatos;
 }
 
 
