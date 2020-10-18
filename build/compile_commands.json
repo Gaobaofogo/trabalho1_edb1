@@ -16,6 +16,11 @@
 },
 {
   "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
+  "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/questao.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/questao.cpp",
+  "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/questao.cpp"
+},
+{
+  "directory": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/build",
   "command": "/usr/bin/c++   -I/home/gabriel/Faculdade/edb1/trabalho1_edb1/include    -std=gnu++11 -o CMakeFiles/prog.dir/src/quick_sorts.cpp.o -c /home/gabriel/Faculdade/edb1/trabalho1_edb1/src/quick_sorts.cpp",
   "file": "/home/gabriel/Faculdade/edb1/trabalho1_edb1/src/quick_sorts.cpp"
 },

@@ -2,6 +2,7 @@
 #include "config.hpp"
 #include "file_exception.hpp"
 #include "gabarito.hpp"
+#include "questao.hpp"
 
 #include <fstream>
 #include <iostream>
@@ -15,12 +16,13 @@ Config::Config(std::string _filename) {
 }
 
 Candidato* Config::load_data() {
-  this->quantidade_candidatos = 0;
   std::ifstream resp_file(filename);
 
   if (resp_file.fail()) {
     throw FileException();
   }
+
+  this->questoes = this->init_questions();
 
   Gabarito gabarito;
   gabarito.resultado[0] = 'A';
@@ -39,6 +41,25 @@ Candidato* Config::load_data() {
   int limite = 1;
 
   while(std::getline(resp_file, line)) {
+    std::stringstream sstream(line);
+    std::string lixo;
+    char resposta;
+
+    // Remove nome
+    sstream >> lixo;
+
+    // Olha as notas
+    for (int i = 0; i < 10; ++i) {
+      sstream >> resposta;
+      
+      if (resposta == gabarito.resultado[i]) {
+        this->questoes[i].acertos += 1;
+      } else if (resposta != 'A' && resposta != 'B' && resposta != 'C'
+                 && resposta != 'D' && resposta != 'E') {
+        this->questoes[i].erros_vazios += 1;
+      }
+    }
+
     Candidato novo_candidato(line, gabarito);
 
     if (this->quantidade_candidatos == limite) {
@@ -72,4 +93,20 @@ Candidato* Config::alloc_candidatos(Candidato *candidatos, int limite) {
 
 int Config::get_quantidade_candidatos() {
   return this->quantidade_candidatos;
+}
+
+
+Questao* Config::init_questions() {
+  this->questoes = new Questao[10];
+
+  for (int i = 0; i < 10; ++i) {
+    Questao nova_questao(i + 1, 0, 0);
+    this->questoes[i] = nova_questao;
+  }
+
+  return this->questoes;
+}
+
+Questao* Config::get_questoes() {
+  return this->questoes;
 }

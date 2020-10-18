@@ -19,6 +19,8 @@ int main(int argc, char* argv[]) {
   );
   app.set_quantidade_candidatos(
       config.get_quantidade_candidatos());
+  app.set_questoes(
+      config.get_questoes());
 
   return app.run(argv[2], std::stoi(argv[3]));
 }

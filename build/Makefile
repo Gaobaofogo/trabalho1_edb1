@@ -231,6 +231,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/questao.o: src/questao.cpp.o
+
+.PHONY : src/questao.o
+
+# target to build an object file
+src/questao.cpp.o:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/questao.cpp.o
+.PHONY : src/questao.cpp.o
+
+src/questao.i: src/questao.cpp.i
+
+.PHONY : src/questao.i
+
+# target to preprocess a source file
+src/questao.cpp.i:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/questao.cpp.i
+.PHONY : src/questao.cpp.i
+
+src/questao.s: src/questao.cpp.s
+
+.PHONY : src/questao.s
+
+# target to generate assembly for a file
+src/questao.cpp.s:
+	$(MAKE) -f CMakeFiles/prog.dir/build.make CMakeFiles/prog.dir/src/questao.cpp.s
+.PHONY : src/questao.cpp.s
+
 src/quick_sorts.o: src/quick_sorts.cpp.o
 
 .PHONY : src/quick_sorts.o
@@ -279,6 +306,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/questao.o"
+	@echo "... src/questao.i"
+	@echo "... src/questao.s"
 	@echo "... src/quick_sorts.o"
 	@echo "... src/quick_sorts.i"
 	@echo "... src/quick_sorts.s"

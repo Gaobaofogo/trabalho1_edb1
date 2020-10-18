@@ -12,12 +12,16 @@
  */
 
 #include "candidato.hpp"
+#include "questao.hpp"
 
 typedef bool comparation_func(int, int);
 
 void quick_sort_best(Candidato* candidatos, int p, int r);
 void quick_sort_worst(Candidato* candidatos, int p, int r);
+int partition_acertos(Candidato* candidatos, int p, int r, comparation_func isTrue);
 
-int partition(Candidato* candidatos, int p, int r, comparation_func isTrue);
+void quick_sort_best_questions(Questao *questoes, int p, int r);
+void quick_sort_worst_questions(Questao *questoes, int p, int r);
+int partition_questoes(Questao* questoes, int p, int r, comparation_func isTrue);
 
 #endif

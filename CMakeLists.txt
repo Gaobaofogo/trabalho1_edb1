@@ -10,6 +10,7 @@ ADD_EXECUTABLE(
   src/app.cpp
   src/candidato.cpp
   src/config.cpp
+  src/questao.cpp
   src/quick_sorts.cpp
   src/main.cpp
 )
