@@ -53,6 +53,15 @@ int App::run(std::string command, size_t quantity) {
     for (size_t i = 0; i < quantity; ++i) {
       std::cout << this->questoes[i].id << " - " << this->questoes[i].acertos << std::endl;
     }
+  } else if (command == "blank-questions") {
+    quick_sort_blank_questions(
+        this->questoes,
+        0,
+        9);
+
+    for (size_t i = 0; i < quantity; ++i) {
+      std::cout << this->questoes[i].id << " - " << this->questoes[i].erros_vazios << std::endl;
+    }
   } else {
     std::cerr << "Comando '" << command << "' não reconhecido." << std::endl;
     return 1;

@@ -97,3 +97,36 @@ int partition_questoes(Questao *questoes, int p, int r, comparation_func isTrue)
 
   return i + 1;
 }
+
+
+void quick_sort_blank_questions(Questao *questoes, int p, int r) {
+  if (p < r) {
+    int q = partition_questoes(questoes, p, r, [](int questao_erros_vazios, int pivot_erro_vazio) {
+          return questao_erros_vazios <= pivot_erro_vazio;
+        });
+    quick_sort_worst_questions(questoes, p, q - 1);
+    quick_sort_worst_questions(questoes, q + 1, r);
+  }
+}
+
+
+int partition_blank_questoes(Questao *questoes, int p, int r, comparation_func isTrue) {
+  Questao x = questoes[r];
+  int i = p - 1;
+
+  for (int j = p; j < r; ++j) {
+    if (isTrue(questoes[j].erros_vazios, x.erros_vazios)) {
+      ++i;
+
+      Questao tmp = questoes[i];
+      questoes[i] = questoes[j];
+      questoes[j] = tmp;
+    }
+  }
+
+  Questao tmp = questoes[i + 1];
+  questoes[i + 1] = questoes[r];
+  questoes[r] = tmp;
+
+  return i + 1;
+}
