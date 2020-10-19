@@ -84,3 +84,17 @@ void quick_sort_blank_questions(Questao *questoes, int p, int r) {
     quick_sort_blank_questions(questoes, q + 1, r);
   }
 }
+
+void quick_sort_id(Questao *questoes, int p, int r) {
+  if (p < r) {
+    int q = partition<Questao>(
+        questoes,
+        p,
+        r,
+        [](Questao questao, Questao pivot) {
+          return questao.id <= pivot.id;
+        });
+    quick_sort_id(questoes, p, q - 1);
+    quick_sort_id(questoes, q + 1, r);
+  }
+}

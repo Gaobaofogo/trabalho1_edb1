@@ -23,6 +23,8 @@ void quick_sort_best_questions(Questao *questoes, int p, int r);
 void quick_sort_worst_questions(Questao *questoes, int p, int r);
 void quick_sort_blank_questions(Questao *questoes, int p, int r);
 
+void quick_sort_id(Questao *questoes, int p, int r);
+
 template<class T>
 int partition(T* arr, int p, int r, bool isTrue(T, T)) {
   T x = arr[r];

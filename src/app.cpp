@@ -1,6 +1,7 @@
 #include "app.hpp"
 #include "quick_sorts.hpp"
 
+#include <iomanip>
 #include <iostream>
 
 
@@ -57,8 +58,10 @@ void App::best_command(size_t quantity) {
       this->get_quantidade_candidatos() - 1
       );
 
+  std::cout << std::left << std::setw(13) << "Nome" << std::setw(2) << "Nota" << std::endl;
+
   for (size_t i = 0; i < quantity; ++i) {
-    std::cout << this->candidatos[i].nome << " - "<< this->candidatos[i].acertos << std::endl;
+    std::cout << std::left << std::setw(13) << this->candidatos[i].nome << std::setw(3) << this->candidatos[i].acertos << std::endl;
   }
 }
 
@@ -69,8 +72,10 @@ void App::worst_command(size_t quantity) {
       this->get_quantidade_candidatos() - 1
       );
 
+  std::cout << std::left << std::setw(13) << "Nome" << std::setw(2) << "Nota" << std::endl;
+
   for (size_t i = 0; i < quantity; ++i) {
-    std::cout << this->candidatos[i].nome << " - "<< this->candidatos[i].acertos << std::endl;
+    std::cout << std::left << std::setw(13) << this->candidatos[i].nome << std::setw(3) << this->candidatos[i].acertos << std::endl;
   }
 }
 
@@ -81,8 +86,27 @@ void App::best_questions_command(size_t quantity) {
       0,
       9);
 
+  int i = 0;
+  int j = 1;
+
+  while (i < 9 && j <= 9) {
+    if (this->questoes[i].acertos == this->questoes[j].acertos) {
+      ++j;
+    } else if (i < j){
+      quick_sort_id(this->questoes, i, j - 1);
+      i = j;
+    } else {
+      ++i;
+      j = i;
+    }
+  }
+
+  quick_sort_id(this->questoes, i, j - 1);
+
+  std::cout << std::left << std::setw(5) << "ID" << std::setw(7) << "Acertos" << std::endl;
+
   for (size_t i = 0; i < quantity; ++i) {
-    std::cout << this->questoes[i].id << " - " << this->questoes[i].acertos << std::endl;
+    std::cout << std::left << std::setw(5) << this->questoes[i].id << std::setw(3) << this->questoes[i].acertos << std::endl;
   }
 }
 
@@ -93,8 +117,27 @@ void App::worst_questions_command(size_t quantity) {
       0,
       9);
 
+  int i = 0;
+  int j = 1;
+
+  while (i < 9 && j <= 9) {
+    if (this->questoes[i].acertos == this->questoes[j].acertos) {
+      ++j;
+    } else if (i < j){
+      quick_sort_id(this->questoes, i, j - 1);
+      i = j;
+    } else {
+      ++i;
+      j = i;
+    }
+  }
+
+  quick_sort_id(this->questoes, i, j - 1);
+
+  std::cout << std::left << std::setw(5) << "ID" << std::setw(7) << "Acertos" << std::endl;
+
   for (size_t i = 0; i < quantity; ++i) {
-    std::cout << this->questoes[i].id << " - " << this->questoes[i].acertos << std::endl;
+    std::cout << std::left << std::setw(5) << this->questoes[i].id << std::setw(3) << this->questoes[i].acertos << std::endl;
   }
 }
 
@@ -105,7 +148,26 @@ void App::blank_questions_command(size_t quantity) {
       0,
       9);
 
+  int i = 0;
+  int j = 1;
+
+  while (i < 9 && j <= 9) {
+    if (this->questoes[i].erros_vazios == this->questoes[j].erros_vazios) {
+      ++j;
+    } else if (i < j){
+      quick_sort_id(this->questoes, i, j - 1);
+      i = j;
+    } else {
+      ++i;
+      j = i;
+    }
+  }
+
+  quick_sort_id(this->questoes, i, j - 1);
+
+  std::cout << std::left << std::setw(5) << "ID" << std::setw(7) << "Erros" << std::endl;
+
   for (size_t i = 0; i < quantity; ++i) {
-    std::cout << this->questoes[i].id << " - " << this->questoes[i].erros_vazios << std::endl;
+    std::cout << std::left << std::setw(5) << this->questoes[i].id << std::setw(3) << this->questoes[i].erros_vazios << std::endl;
   }
 }
